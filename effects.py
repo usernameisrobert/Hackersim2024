@@ -1,9 +1,6 @@
 import random
 import time
 
-
-text: str ="this is a test"
-
 def get_index(text_list) -> int:
     while True:
         index = random.randint(0, len(text_list) - 1)  # Pick a random index

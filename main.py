@@ -3,6 +3,7 @@ import random
 import os
 import platform
 from Player import Player
+from Path import Path
 from intro import intro
 
 def clear():
@@ -26,7 +27,8 @@ def main():
         except Exception:
             print("You must enter a number")
 
-    intro()
+    # TODO: fix the intro scene
+    # intro() DOES NOT WORK, thinks to robert and his megamind and i don't know how to fix
     clear()
     print("The end")
 
