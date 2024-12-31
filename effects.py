@@ -46,5 +46,3 @@ def evaporate(text: str):
         print(cursor_to_begin_nclear + tmp_text, end='')
         if not tmp_text.strip(' '):
             return
-
-evaporate("hello world")
