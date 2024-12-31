@@ -31,8 +31,8 @@ def intro():
                 else:
                     buffer += colors[random.randint(0, 2)] + chr(random.randint(32, 126)) + reset_color
         print(buffer)
-        if frame>=5 and len(textf)<(frame-5):
+        if frame>=5 and len(text)<(frame-5):
             text+=textf[frame-5]
-        if frame>=25 and len(text2f)<(frame-25):
+        if frame>=25 and len(text2)<(frame-25):
             text2+=text2f[frame-25]
         time.sleep(0.1)
