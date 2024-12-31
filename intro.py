@@ -1,7 +1,6 @@
 import time
 import random
 import os
-
 colors = ["\033[32m", "\033[90m", "\033[34m"]
 reset_color = "\033[0m"
 
@@ -14,7 +13,12 @@ def intro():
         buffer = ""
         textind = 0
         textind2 = 0
-        columns, rows = os.get_terminal_size()
+        try:
+            columns, rows = os.get_terminal_size()
+        except OSError as e:
+            print("OSError: not supported defaulting to default")
+            columns = 50
+            rows = 30
         for y in range(rows):
             for x in range(columns):
                 # Center of the screen
