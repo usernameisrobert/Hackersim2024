@@ -9,16 +9,16 @@ def intro():
     text = ""
     text2f = "The sequel that no one asked for"
     text2 = ""
+    try:
+        columns, rows = os.get_terminal_size()
+    except OSError as e:
+        print("OSError: not supported defaulting to default")
+        columns = 50
+        rows = 30
     for frame in range(60):
         buffer = ""
         textind = 0
         textind2 = 0
-        try:
-            columns, rows = os.get_terminal_size()
-        except OSError as e:
-            print("OSError: not supported defaulting to default")
-            columns = 50
-            rows = 30
         for y in range(rows):
             for x in range(columns):
                 # Center of the screen
