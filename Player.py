@@ -52,7 +52,6 @@ class Inventory:
     def __index__(self, i) -> Item:
         return self.get(i)
 
-
     def remove_item(self, item: Item) -> bool:
         """Remove an item from the inventory."""
         if item in self.items:
