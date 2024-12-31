@@ -65,13 +65,20 @@ class Inventory:
         return len(self.items) >= self.slots
 
 class Player:
+    name: str
     health: float
     money: float
     repuation: int
     suspison: int
+    inventory: Inventory
 
-    def __init__(self, money: float = 20):
+    def __init__(self, name: str, money: float = 20):
+        self.name = name
         self.health = 100
         self.money = money
         self.repuation = 0
         self.suspison = 0
+        self.inventory = Inventory()
+
+    def __str__(self) -> str:
+        return f"YOU ARE {self.name}\nHealth: {self.health}\nMoney: ${self.money:.2f}"
