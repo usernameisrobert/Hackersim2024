@@ -23,7 +23,7 @@ def intro_scene():
 def main():
     name = input("name: ")
 
-    print(f"YOU ARE {name}\nhealth: 100\nmoney: 20\ncan you guess a number between 1 and 5")
+    print(f"YOU ARE {name}\nHealth: 100\nMoney: 20\nCan you guess a number between 1 and 5?")
 
     number = random.randint(1, 5)
     guess = 0
