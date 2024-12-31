@@ -1,0 +1,48 @@
+import random
+import time
+
+
+text: str ="this is a test"
+
+def get_index(text_list) -> int:
+    while True:
+        index = random.randint(0, len(text_list) - 1)  # Pick a random index
+        if text_list[index] not in [' ', '\t', '\n']:
+            return index
+
+def rand_char(text) -> str:
+    text_list = list(text)
+    index = get_index(text_list)
+
+    if random.random() < 0.5:
+        # 80% chance to change the character to a random printable character
+        text_list[index] = chr(random.randint(32, 126))
+    else:
+        # 20% chance to change the character to a space
+        text_list[index] = ' '
+
+    return ''.join(text_list)
+
+def remove(text) -> str:
+    text_list = list(text)
+    index = get_index(text_list)
+
+    text_list[index] = ' '
+    return ''.join(text_list)
+
+def evaporate(text: str):
+    """prints the text to the screen and evaps it"""
+    tmp_text = text
+    for frame in range(10):
+        tmp_text = rand_char(tmp_text)
+        time.sleep(0.1)
+        print(tmp_text)
+        if not tmp_text.strip(' '):
+            return
+
+    while True:
+        tmp_text = remove(tmp_text)
+        time.sleep(0.1)
+        print(tmp_text)
+        if not tmp_text.strip(' '):
+            return
